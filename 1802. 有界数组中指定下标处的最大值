@@ -8,12 +8,15 @@ class Solution:
         use binary search find an array such that max(numsSum) <= maxSum
 
         Coding:
-        build binary search framework
+        build binary search framework, and set the condition
+        finding the sum of right side and left side
         '''
-        left, right = 1, maxSum
+        left, right = 1, maxSum                         # set the left boundary and right bondary of binary search
+        # standard binary search framework
         while left < right:
             mid = (left + right + 1) // 2
-            if self.valid(mid, n, index, maxSum):
+            # valid() function as find the sum of array and compare to maximum
+            if self.valid(mid, n, index, maxSum):       
                 left = mid
             else:
                 right = mid - 1
