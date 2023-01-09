@@ -1,0 +1,13 @@
+class Solution:
+    def isNumber(self, s: str) -> bool:
+        '''
+        简单题我重拳出击，困难题我Ctrl CV
+        '''
+        dic = ["inf", "-inf", "+inf", "Infinity", "-Infinity", "+Infinity"]
+        if s in dic:
+            return False
+        try:
+            float(s)
+            return True
+        except:
+            return False
