@@ -1,0 +1,19 @@
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        def square(n):
+            return n * n
+        '''
+        double pointer method
+        '''
+        n = len(nums)
+        ans = [0] * n 
+        i, j, pos = 0, n - 1, n - 1
+        while i <= j:
+            if square(nums[i]) > square(nums[j]):
+                ans[pos] = square(nums[i])
+                i += 1
+            else:
+                ans[pos] = square(nums[j])
+                j -= 1
+            pos -= 1
+        return ans
