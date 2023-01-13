@@ -1,0 +1,5 @@
+class Solution:
+    def areNumbersAscending(self, s: str) -> bool:
+        a = [int(i) for i in s.split() if i.isdigit()]
+        print(len(set(a)))
+        return sorted(a) == a and len(set(a)) == len(a)
