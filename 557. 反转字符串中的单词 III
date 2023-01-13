@@ -1,0 +1,16 @@
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        arr = s.split(" ")
+        ans = []
+        for st in arr:
+            ss = []
+            for i in range(len(st)):
+                ss.append(st[i])
+            left, right = 0, len(ss) - 1
+            while left < right:
+                ss[left], ss[right] = ss[right], ss[left]
+                left += 1
+                right -= 1
+            st = "".join(ss)
+            ans.append(st)
+        return " ".join(ans)
