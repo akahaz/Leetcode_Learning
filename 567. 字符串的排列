@@ -1,0 +1,16 @@
+class Solution:
+    def checkInclusion(self, s1: str, s2: str) -> bool:
+        counter1 = collections.Counter(s1)
+        N = len(s2)
+        left = 0
+        right = len(s1) - 1
+        counter2 = collections.Counter(s2[left: right])
+        for r in range(right, N):
+            counter2[s2[r]] += 1
+            if counter1 == counter2:
+                return True
+            counter2[s2[left]] -= 1
+            if not counter2[s2[left]]:
+                del counter2[s2[left]]
+            left += 1
+        return False
