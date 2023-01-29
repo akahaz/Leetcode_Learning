@@ -1,0 +1,10 @@
+lass Solution:
+    def countAsterisks(self, s: str) -> int:
+        check = True
+        res = 0
+        for c in s:
+            if c == "|":
+                check = not check
+            if c == "*" and check:
+                res += 1
+        return res
